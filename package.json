@@ -8,12 +8,14 @@
 	"scripts": {
 		"dev": "nodemon index.js --exec babel-node",
 		"build": "babel src/ -d dist",
+		"test": "cross-env NODE_ENV=test mocha --compilers js:@babel/register --timeout 10000 src/tests/*.js",
 		"start": "node dist/bin/www.js"
 	},
   "devDependencies": {
     "@babel/cli": "7.0.0-beta.54",
     "@babel/core": "7.0.0-beta.54",
     "@babel/node": "7.0.0-beta.54",
+    "@babel/register": "7.0.0-beta.54",
     "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.54",
     "@babel/preset-env": "7.0.0-beta.54"
   },
